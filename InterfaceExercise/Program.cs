@@ -1,5 +1,5 @@
 ﻿using static InterfaceExercise.ICompany;
-using static InterfaceExercise.Ivehicle;
+using static InterfaceExercise.IVehicle;
 using System;
 using System.Collections.Generic;
 
@@ -41,24 +41,33 @@ namespace InterfaceExercise
              */
 
 
-            Car myFirstCar = new Car { Year = "1999", Make = "Ford", Model = "Raptor", HasTrunk = true };
-            Motorcycle myFirstMotor = new Motorcycle { Year = "1999", Make = "Harley Davidson", Model = "Fat Boy", HasSideCart = true };
+            IVehicle myFirstCar = new Car { Year = "1999", Make = "Ford", Model = "Raptor", HasTrunk = true };
+            IVehicle myFirstMotor = new Motorcycle { Year = "1999", Make = "Harley Davidson", Model = "Fat Boy", HasSideCart = true };
+
+            SUV suv = new SUV();
+            suv.Year = "1999";
+            suv.Make = "Ford";
+            suv.Model = "Bronco";
 
 
-            List<Ivehicle> vehicles = new List<Ivehicle>();
+
+            List<IVehicle> vehicles = new List<IVehicle>();
 
             vehicles.Add(myFirstCar);
             vehicles.Add(myFirstMotor);
+            vehicles.Add(suv);
 
-            foreach (Ivehicle vehicle in vehicles)
+            foreach (IVehicle vehicle in vehicles)
             {
                 Console.WriteLine($"Year: {vehicle.Year} Make: {vehicle.Make} Model: {vehicle.Model}");
                 Console.WriteLine();
-                vehicle.Drive();
-                vehicle.DriveDefault();
+                vehicle.Drive();              
                 Console.WriteLine();
 
             }
+
+
+
 
             //Now, create objects of your 3 classes and give their members values;
             //Creatively display and organize their values

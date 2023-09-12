@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InterfaceExercise
 {
-    class Motorcycle : Ivehicle, ICompany 
+    class Motorcycle : IVehicle, ICompany
     {
         public string Year { get; set; }
         public string Make { get; set; }
